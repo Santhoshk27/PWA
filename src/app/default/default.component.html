@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+
+    <div class="col-md-6 d-none d-md-flex bg-image"></div>
+
+
+
+    <div class="col-md-6 bg-light">
+      <div class="login d-flex align-items-center py-5">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-7 mx-auto">
+              <h2 class="display-4">Login</h2>
+
+              <form>
+                <div class="form-group mb-3">
+                  <input id="username" type="text" placeholder="User ID" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4" [(ngModel)]="loginUserData.username" name="username" value="test" required>
+                </div>
+                <div class="form-group mb-3">
+                  <input id="inputPassword" type="password" placeholder="Password" class="form-control rounded-pill border-0 shadow-sm px-4 text-primary" [(ngModel)]="loginUserData.password" name="password" value="test" required>
+                </div>
+
+                <button type="button" (click)="loginUser()" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Login</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

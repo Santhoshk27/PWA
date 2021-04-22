@@ -1,0 +1,28 @@
+<!-- <p>The server can't recognize current device.</p> -->
+
+<div class="col-md-6 offset-md-3 mt-4">
+  <div class="alert alert-info" *ngIf="config.getErrors()!=null">
+    <span *ngFor="let err of config.getErrors()">
+      {{err}}
+    </span><br/>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h4>Login</h4>
+    </div>
+    <div class="card-body">
+      <form class="form">
+        <div class="form-group">
+          <label for="username">Username. <small>(For test purposes you can use username <b>test</b>)</small></label>
+          <input id="username" type="text" class="form-control rounded-0" [(ngModel)]="loginUserData.username" name="username" value="test" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password <small>(For test purposes you can use <b>any</b> password)</small></label>
+          <input id="password" type="password" class="form-control rounded-0" [(ngModel)]="loginUserData.password" name="password" value="test" required>
+        </div>
+        <button type="button" (click)="loginUser()" class="btn btn-success float-right">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+

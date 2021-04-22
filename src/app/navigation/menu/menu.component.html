@@ -1,0 +1,17 @@
+<div class="menu">
+
+  <div class="nav-menu color-primary">
+    <nav #tabNav mat-tab-nav-bar color="accent" [disableRipple]="true">
+      <a mat-tab-link
+         class="rounded"
+         *ngFor="let cat of showCategory; let i = index"
+         [active]="i === activeIndex"
+         (click)="onChooseCat('Class_' + cat.Id)"
+         style="border-bottom: 3px solid {{cat.bgColor}}; border-top: 3px solid {{cat.bgColor}};"
+        >
+        {{cat.Name}}
+      </a>
+    </nav>
+  </div>
+
+</div>

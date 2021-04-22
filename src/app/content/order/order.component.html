@@ -1,0 +1,52 @@
+
+<div class="order"
+  *ngIf="(currentOrder !== undefined  && currentOrder.Items !== undefined && currentOrder.Items.length > 0); else elseBlock">
+
+  <div class="row justify-content-start">
+    <div class="col-2"></div>
+    <div class="col-lg-6 col-md-6 col-xs-12 float-left item">
+      <h3 *ngIf="currentOrder.Id>0">Order № {{currentOrder.Id}}
+        <span *ngIf="currentOrder.status>0">({{this.orderService.getOrderStatus(currentOrder.status)}})</span>
+      </h3>
+      <h3 *ngIf="currentOrder.Id===0">Cart</h3>
+    </div>
+  </div>
+
+  <div class="row justify-content-start" *ngFor="let item of currentOrder.Items; index as ind">
+    <div class="col-2"></div>
+
+    <div class="col-lg-6 col-md-6 col-xs-12 float-left item">
+      <app-item [prod]="item" [i]="ind"></app-item>
+    </div>
+
+    <div class="col-4">
+      <div class="amount">Price: ${{ngPriceItemAmount(item)}}</div>
+      <div class="status" *ngIf="item.status">Status: {{this.orderService.getOrderStatus(item.status)}}</div>
+    </div>
+  </div>
+
+  <div class="row justify-content-end">
+    <div class="col-4">
+      Total price: ${{ngCountOrderPrice(currentOrder.Items)}}
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col-4">
+      <button
+        *ngIf="!this.orderService.isAllItemsInOrderConfirmed(this.currentOrder)" type="button"
+        class="orderConfirm btn order-0 btn-success"
+        (click)="ngConfirmOrder()">
+        Confirm
+      </button>
+      <div *ngIf="this.orderService.isAllItemsInOrderConfirmed(this.currentOrder)">
+        {{this.orderService.getOrderStatus(currentOrder.status)}}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #elseBlock>
+  <div class="empty-order">order is empty</div>
+</ng-template>
+

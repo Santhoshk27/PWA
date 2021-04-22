@@ -1,0 +1,15 @@
+<div id="shoppingCart" class="order-info">
+  <div class="short-info rounded py-1 px-2"
+       (click)="showOrder()"
+       *ngIf="(currentOrder !== undefined  && currentOrder.Items !== undefined && currentOrder.Items.length > 0); else elseBlock">
+
+    <div class="cart-description float-left">
+      <span class="total-price">$ {{ngCountOrderPrice(currentOrder.Items)}}</span><br/>
+      <span class="count-items"> {{currentOrder.Items.length}} item(s)</span>
+    </div>
+    <button type="button" (click)="showOrder()" class="btn btn-danger">Checkout</button>
+  </div>
+  <ng-template #elseBlock>
+    <div class="empty-cart rounded px-3 py-1">shop-basket is empty</div>
+  </ng-template>
+</div>

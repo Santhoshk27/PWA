@@ -1,0 +1,20 @@
+<div class="navigation fixed-top"
+     fxFlex fxLayoutAlign="flex-start"
+  >
+  <div class="container deviceTitle">
+    <div class="col-12 clearfix">
+      <button type="button" (click)="ngShowMenu()" class="showMenu btn btn-outline-info">Menu</button>
+      <app-order-info></app-order-info>
+      <button #callWaiter type="button"
+              (click)="ngCallWaiter()"
+              class="callWaiter btn btn-success"
+              btn-warning
+      >Call waiter</button>
+      <h4>{{this.currentSettings?.title}}</h4>
+    </div>
+    <div class="col-12 clearfix">
+      <app-menu [showCategory]="showCategory"></app-menu>
+    </div>
+  </div>
+
+</div>

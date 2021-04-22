@@ -1,0 +1,51 @@
+//
+// Optional textual caps
+//
+$card-cap-bg: #fafafa;
+$card-cap-color: #000;
+
+.card-header {
+  background-color: $card-cap-bg;
+  padding: .55rem 1.05rem;
+
+  .btn-link {
+    color: $card-cap-color;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .btn.focus,
+  .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.0rem; // rgba(0,123,255,.25);
+  }
+}
+
+.menu {
+  margin: 10px 5px;
+
+
+  .mat-tab-link {
+    background-color: $card-cap-bg;
+    color: $card-cap-color;
+    margin: 10px 5px;
+  }
+  .mat-tab-link.active {
+
+  }
+
+  .mat-tab-link:hover {
+    color:#000;
+  }
+
+  h3 {
+    border: 1px solid #e5e5e5;
+    border-bottom: 0px;
+    margin: 15px 0 0 0;
+    min-height: 20px;
+    padding: 5px 15px 10px 15px;
+    background: #fafafa;
+  }
+}
+
+

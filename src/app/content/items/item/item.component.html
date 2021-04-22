@@ -1,0 +1,39 @@
+<div class="item rounded" [@addItemToCart]="slideFromList" id="item_{{this.itemId}}">
+  <a><img [src]="(ngGetImgSrc())" alt="{{prod.Name}}" class="rounded" /></a>
+  <div class="item-info">
+    <div class="title">
+      <!-- <span class="idProd">{{prod.id}}. </span> --><h6 class="name">{{prod.Name}}</h6>
+    </div>
+    <p>Code: {{prod.Code}}</p>
+
+    <div class="form-elements form-inline">
+      <div class="price float-left">{{ prod.Price | currency }} <!--<span>8 pc.</span>--> </div>
+
+      <div class="ml-auto" *ngIf="this.showQtyControl===true; else insteadQtyControl">
+
+        <div [hidden]="(!this.inputQty)" class="quantity-selector row-xs px-1 mr-2">
+          <div class="form-check-inline minus">
+            <button class="btn btn-xs col-xs-1" (click)="minus()">-</button>
+          </div>
+          <div class="form-check-inline">
+            <input type="text" class="form-control form-control-xs col-xs-1" [(ngModel)]="inputQty" [disabled]="true">
+          </div>
+          <div class="form-check-inline plus">
+            <button class="btn btn-xs col-xs-1" (click)="plus()">+</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-danger btn-sm px-4 mr-2"
+                [hidden]="(this.inputQty)" (click)="plus(true)">
+          Add
+        </button>
+      </div>
+
+      <ng-template #insteadQtyControl>
+        <div class="row-xs px-1 ml-auto mr-2 item-order-qty">Quantity: {{this.inputQty}}</div>
+      </ng-template>
+
+    </div>
+
+  </div>
+</div>

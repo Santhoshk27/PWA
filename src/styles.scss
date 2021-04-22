@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "app/navigation/menu/menu.component";
+
+/*
+$grid-breakpoints: (
+  xs: 0,
+  sm: 480px,
+  md: 768px,
+  lg: 1024px
+);
+
+$container-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 960px
+);
+*/
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+$height-footer: 30px;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: $height-footer;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $height-footer;
+  line-height: $height-footer; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+body > .container {
+  padding: 60px 15px 0;
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 80%;
+}
+code {
+  font-size: 80%;
+}
+
+.html {
+  scroll-behavior: smooth;
+}
